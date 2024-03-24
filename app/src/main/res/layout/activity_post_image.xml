@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFE6E6"
+    tools:context=".PostImageActivity">
+
+    <ImageView
+        android:id="@+id/ivImage"
+        android:layout_width="340dp"
+        android:layout_height="362dp"
+        android:background="@drawable/post1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.322"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+    <Button
+        android:id="@+id/btnPost"
+        android:layout_width="97dp"
+        android:layout_height="102dp"
+        android:background="@drawable/post1"
+        android:backgroundTintMode="add"
+        android:text="."
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.813" />
+
+    <ImageButton
+        android:id="@+id/btnDelete"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:contentDescription="Delete"
+        android:background="@drawable/round_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.803"
+        app:srcCompat="@drawable/ic_action_trash"
+        tools:srcCompat="@drawable/ic_action_trash" />
+
+    <ImageButton
+        android:id="@+id/btnSave"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:background="@drawable/round_white"
+        android:contentDescription="Delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.829"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.806"
+        app:srcCompat="@drawable/baseline_file_download_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
