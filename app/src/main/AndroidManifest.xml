@@ -22,6 +22,15 @@
             android:name=".PostImageActivity"
             android:exported="false" />
         <activity
+            android:name=".ImageClassification"
+            android:exported="false" />
+        <activity
+            android:name=".ItemFriend"
+            android:exported="false" />
+        <activity
+            android:name=".AddDeleteFriend"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
