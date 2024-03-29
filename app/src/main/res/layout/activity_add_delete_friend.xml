@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/AddDeleteFriend"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFE6E6"
+    android:backgroundTint="#FFE6E6"
+    tools:context=".AddDeleteFriend">
+
+    <Button
+        android:id="@+id/btnComeBack"
+        android:layout_width="149dp"
+        android:layout_height="27dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.044" />
+
+    <TextView
+        android:id="@+id/tvNumberFried"
+        android:layout_width="203dp"
+        android:layout_height="43dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="Người bạn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.129" />
+
+    <EditText
+        android:id="@+id/edtSearch"
+        android:layout_width="262dp"
+        android:layout_height="59dp"
+        android:hint="Thêm một người bạn mới"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.213"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.233" />
+
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="69dp"
+        android:layout_height="60dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.897"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.233" />
+
+    <TextView
+        android:id="@+id/tvFriedList"
+        android:layout_width="203dp"
+        android:layout_height="43dp"
+        android:padding="8dp"
+        android:text="Bạn bè của bạn"
+        android:textColor="#F4538A"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.153"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.351" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/revFriendList"
+        android:layout_width="346dp"
+        android:layout_height="400dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.909" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

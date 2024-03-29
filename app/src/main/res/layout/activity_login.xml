@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFE6E6"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:id="@+id/tLogin"
+        android:layout_width="256dp"
+        android:layout_height="127dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFE6E6"
+        android:text="Đăng nhập"
+        android:textAlignment="center"
+        android:textColor="#F4538A"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.158" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="196dp"
+        android:layout_height="70dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="Đăng nhập"
+        android:textColor="#F4538A"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.539"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.67" />
+
+    <Button
+        android:id="@+id/btnSignup"
+        android:layout_width="196dp"
+        android:layout_height="70dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="Đăng ký"
+        android:textColor="#F4538A"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.811" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="288dp"
+        android:layout_height="56dp"
+        android:ems="10"
+        android:hint="user name"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.37" />
+
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="288dp"
+        android:layout_height="56dp"
+        android:ems="10"
+        android:hint="password"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
