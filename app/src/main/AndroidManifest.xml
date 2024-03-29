@@ -13,6 +13,24 @@
         android:theme="@style/Theme.LYM"
         tools:targetApi="31">
         <activity
+            android:name=".TakePhotoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PostImageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ImageClassification"
+            android:exported="false" />
+        <activity
+            android:name=".ItemFriend"
+            android:exported="false" />
+        <activity
+            android:name=".AddDeleteFriend"
+            android:exported="false" />
+        <activity
             android:name=".WatchPostActivity"
             android:exported="false" />
         <activity
