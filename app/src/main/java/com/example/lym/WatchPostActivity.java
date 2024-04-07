@@ -3,7 +3,9 @@ package com.example.lym;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.*;
 
 public class WatchPostActivity extends AppCompatActivity {
@@ -43,5 +45,27 @@ public class WatchPostActivity extends AppCompatActivity {
         btnImageClassification = (Button) findViewById(R.id.btnImageClassification);
         btnSave = (Button) findViewById(R.id.btnSave);
         btnDelete = (Button) findViewById(R.id.btnDelete);
+
+        iBAvatar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myintent = new Intent(WatchPostActivity.this, ProfileActivity.class);
+                startActivity(myintent);
+
+            }
+
+
+        });
+
+        btnImageClassification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myintent = new Intent(WatchPostActivity.this, ProfileActivity.class);
+                startActivity(myintent);
+
+            }
+        });
+
+
     }
 }
