@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "927769097626",
+    "project_id": "lymandroi",
+    "storage_bucket": "lymandroi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927769097626:android:d2b1e9bc25ef7ccf94b623",
+        "android_client_info": {
+          "package_name": "com.example.lym"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAq8X2ENYBCbTADJSvjDWVBlQ4nvXoHM2Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
