@@ -25,6 +25,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Camera;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -32,6 +33,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.common.util.concurrent.ListenableFuture;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -66,14 +75,38 @@ public class TakePhotoActivity extends AppCompatActivity {
     static final int REQUEST_CODE_CAMERA =1;
 
     private Camera camera;
+    FirebaseAuth mAuthencation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_take_photo);
+        mAuthencation = FirebaseAuth.getInstance();
+        FirebaseUser firebaseUser = mAuthencation.getCurrentUser();
+        DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference().child("users").child(firebaseUser.getUid());
+
+        Log.d("UserCount", firebaseUser.getUid());
 
         // Initialize view references (as before)
         ibProfileTakePhoto = (ImageButton) findViewById(R.id.ibProfileTakePhoto);
+        DatabaseReference avatarUrlRef = usersRef.child("avatar");
+        Log.d("UserCount","aaaa1");
+        avatarUrlRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Log.d("UserCount","aaaa2");
+                String avatarUrl = snapshot.getValue(String.class);
+
+                Log.d("UserCount", avatarUrl);
+                Log.d("UserCount","aaaa3");
+                Picasso.get().load(avatarUrl).into(ibProfileTakePhoto);
+                ibProfileTakePhoto.setClipToOutline(true);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Xử lý khi có lỗi xảy ra
+            }
+        });
         ibTakePhoto = (ImageButton) findViewById(R.id.ibTakePhoto);
         ibChangeCamera = (ImageButton) findViewById(R.id.ibChangeCamera);
         tvListFriendTakePhoto = (TextView) findViewById(R.id.tvListFriendTakePhoto);
@@ -113,6 +146,7 @@ public class TakePhotoActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
 
     }

@@ -3,9 +3,12 @@ package com.example.lym;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
+import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -43,7 +46,10 @@ public class PostImageActivity extends AppCompatActivity {
         byte[] bytes = getIntent().getByteArrayExtra("image");
         File file = (File) getIntent().getExtras().get("file");
         Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-        ivImage.setImageBitmap(bitmap);
+        Bitmap rotatedBitmap = rotateBitmap(bitmap);
+
+        ivImage.setImageBitmap(rotatedBitmap);
+        //ivImage.setImageBitmap(bitmap);
 
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +61,8 @@ public class PostImageActivity extends AppCompatActivity {
                 if (file.exists()) {
                     if (file.delete()) {
                         Toast.makeText(PostImageActivity.this, "Image and file deleted!", Toast.LENGTH_SHORT).show();
+                        Intent myintent = new Intent(PostImageActivity.this, TakePhotoActivity.class);
+                        startActivity(myintent);
                     } else {
                         Toast.makeText(PostImageActivity.this, "Failed to delete file!", Toast.LENGTH_SHORT).show();
                     }
@@ -88,8 +96,11 @@ public class PostImageActivity extends AppCompatActivity {
                 }
             }
         });
+    }
 
-
-
+    private Bitmap rotateBitmap(Bitmap bitmap) {
+        Matrix matrix = new Matrix();
+        matrix.setRotate(90);
+        return Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
     }
 }
