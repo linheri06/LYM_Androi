@@ -8,7 +8,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.*;
 import android.os.Bundle;
->>>>>>> origin/lehuyenmy
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,5 +18,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("message");
+
+        myRef.setValue("Hello, World523!");
+
+        Intent intent = new Intent(MainActivity.this, ImageClassification.class);
+        startActivity(intent);
     }
 }
