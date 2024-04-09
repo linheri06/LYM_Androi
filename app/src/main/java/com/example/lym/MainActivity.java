@@ -12,6 +12,7 @@ import android.os.Bundle;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -19,12 +20,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
+        Intent myintent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(myintent);
 
-        myRef.setValue("Hello, World523!");
 
-        Intent intent = new Intent(MainActivity.this, ImageClassification.class);
-        startActivity(intent);
     }
 }

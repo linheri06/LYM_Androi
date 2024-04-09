@@ -7,16 +7,15 @@
     android:background="#FFE6E6"
     tools:context=".TakePhotoActivity">
 
-    <ImageView
-        android:id="@+id/ivImageTakePhoto"
-        android:layout_width="341dp"
-        android:layout_height="372dp"
+    <androidx.camera.view.PreviewView
+        android:id="@+id/pvCamera"
+        android:layout_width="353dp"
+        android:layout_height="426dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.398"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        app:layout_constraintVertical_bias="0.37" />
 
     <ImageButton
         android:id="@+id/ibTakePhoto"
@@ -48,15 +47,17 @@
     <ImageButton
         android:id="@+id/ibProfileTakePhoto"
         android:layout_width="75dp"
-        android:layout_height="69dp"
+        android:layout_height="75dp"
         android:contentDescription="Delete"
-        android:background="@drawable/round_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.047"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintVertical_bias="0.024"
+        android:background="@drawable/round_button"
+        android:shape="oval"
+        />
 
     <ImageButton
         android:id="@+id/ibChangeCamera"
@@ -71,5 +72,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.861" />
+
+<!--    <ImageView-->
+<!--        android:id="@+id/ivTakePhoto"-->
+<!--        android:layout_width="353dp"-->
+<!--        android:layout_height="426dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.324"-->
+<!--        app:srcCompat="@drawable/ic_launcher_background" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
