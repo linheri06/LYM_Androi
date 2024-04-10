@@ -11,16 +11,18 @@
 
     <Button
         android:id="@+id/btnComeBack"
-        android:layout_width="149dp"
-        android:layout_height="27dp"
+        android:layout_width="67dp"
+        android:layout_height="68dp"
         android:background="#FFFFFF"
         android:backgroundTint="#FFFFFF"
-        android:text="Button"
+        android:textColor="#090909"
+        android:text="button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.044" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <TextView
         android:id="@+id/tvNumberFried"
@@ -31,11 +33,13 @@
         android:gravity="center"
         android:padding="8dp"
         android:text="Người bạn"
+        android:textColor="#121111"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.129" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <EditText
         android:id="@+id/edtSearch"
@@ -43,12 +47,14 @@
         android:layout_height="59dp"
         android:hint="Thêm một người bạn mới"
         android:inputType="text"
+        android:textColor="#F4538A"
+        android:textColorHint="#0E0E0E"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.213"
+        app:layout_constraintHorizontal_bias="0.201"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.233" />
+        app:layout_constraintVertical_bias="0.145" />
 
     <Button
         android:id="@+id/btnSearch"
@@ -56,13 +62,14 @@
         android:layout_height="60dp"
         android:background="#FFFFFF"
         android:backgroundTint="#FFFFFF"
-        android:text="Button"
+        android:text="Thêm"
+        android:textColor="#090909"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.897"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.233" />
+        app:layout_constraintVertical_bias="0.146" />
 
     <TextView
         android:id="@+id/tvFriedList"
@@ -74,21 +81,23 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.153"
+        app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.351" />
+        app:layout_constraintVertical_bias="0.245" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/revFriendList"
-        android:layout_width="346dp"
-        android:layout_height="400dp"
+        android:layout_width="350dp"
+        android:layout_height="482dp"
+        android:scrollbars="vertical"
+        app:layoutManager="LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.909" />
+        app:layout_constraintVertical_bias="0.935" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
