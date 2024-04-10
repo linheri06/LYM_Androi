@@ -1,6 +1,7 @@
 package com.example.lym.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
@@ -12,12 +13,12 @@ import android.widget.*;
 import com.example.lym.R;
 
 public class ImageClassification extends AppCompatActivity {
-
     ImageButton ibtnImage_classify;
     Button btnChat_classify;
     ImageButton btnTakePhoto_classify;
     Spinner spinnerClassify;
     RecyclerView revImage_classify;
+    ImageClassificationAdapter imageClassificationAdapter;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -39,6 +40,11 @@ public class ImageClassification extends AppCompatActivity {
 
             }
         });
-
+        btnTakePhoto_classify.setOnClickListener(v->{
+            Intent intent = new Intent(this, TakePhotoActivity.class);
+            startActivity(intent);
+        });
+        revImage_classify.setLayoutManager(new GridLayoutManager(ImageClassification.this,3));
+        revImage_classify.setAdapter(imageClassificationAdapter);
     }
 }
