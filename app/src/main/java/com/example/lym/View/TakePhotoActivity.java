@@ -1,4 +1,4 @@
-package com.example.lym;
+package com.example.lym.View;
 
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
@@ -7,11 +7,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.camera.core.AspectRatio;
 import androidx.camera.core.CameraSelector;
-import androidx.camera.core.CameraX;
 import androidx.camera.core.ImageCapture;
 import androidx.camera.core.ImageCaptureException;
 import androidx.camera.core.Preview;
-import androidx.camera.core.resolutionselector.ResolutionSelector;
 import androidx.camera.lifecycle.ProcessCameraProvider;
 import androidx.camera.view.PreviewView;
 import androidx.core.content.ContextCompat;
@@ -24,14 +22,13 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Camera;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.lym.R;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -45,7 +42,6 @@ import com.squareup.picasso.Picasso;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 
@@ -72,6 +68,7 @@ public class TakePhotoActivity extends AppCompatActivity {
 
     private ImageButton ibTakePhoto;
     private ImageButton ibChangeCamera;
+    ImageButton ibImageList;
     static final int REQUEST_CODE_CAMERA =1;
 
     private Camera camera;
@@ -94,11 +91,9 @@ public class TakePhotoActivity extends AppCompatActivity {
         avatarUrlRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Log.d("UserCount","aaaa2");
                 String avatarUrl = snapshot.getValue(String.class);
 
                 Log.d("UserCount", avatarUrl);
-                Log.d("UserCount","aaaa3");
                 Picasso.get().load(avatarUrl).into(ibProfileTakePhoto);
                 ibProfileTakePhoto.setClipToOutline(true);
             }
@@ -110,7 +105,9 @@ public class TakePhotoActivity extends AppCompatActivity {
         ibTakePhoto = (ImageButton) findViewById(R.id.ibTakePhoto);
         ibChangeCamera = (ImageButton) findViewById(R.id.ibChangeCamera);
         tvListFriendTakePhoto = (TextView) findViewById(R.id.tvListFriendTakePhoto);
-        //ivTakePhoto = (ImageView) findViewById(R.id.ivTakePhoto);
+        setTvListFriendTakePhoto(firebaseUser);
+        ibImageList = (ImageButton) findViewById(R.id.ibImageList);
+
         pvCamera = (PreviewView) findViewById(R.id.pvCamera);
 
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
@@ -128,6 +125,14 @@ public class TakePhotoActivity extends AppCompatActivity {
                     cameraFacing = CameraSelector.LENS_FACING_BACK;
                 }
                 startCamera(cameraFacing);
+            }
+        });
+
+        ibImageList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TakePhotoActivity.this, ImageClassification.class);
+                startActivity(intent);
             }
         });
 
@@ -151,6 +156,27 @@ public class TakePhotoActivity extends AppCompatActivity {
 
     }
 
+    private void setTvListFriendTakePhoto( FirebaseUser firebaseUser) {
+        DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference().child("friends").child(firebaseUser.getUid());
+        Log.d("UserCount","aaaa12");
+        usersRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Log.d("UserCount","aaaa2");
+                int nodeCount = (int) snapshot.getChildrenCount();
+                Log.d("UserCount","aaaa22");
+                tvListFriendTakePhoto.setText(String.valueOf(nodeCount)+ " người bạn");
+                // Do something with nodeCount (e.g., update UI)
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e("NodeCount", "Lỗi khi lấy số lượng node: " + error.getMessage());
+            }
+        });
+
+    }
+
     public void startCamera(int cameraFacing){
         int aspectRatio = aspectRatio(pvCamera.getWidth(), pvCamera.getHeight());
         ListenableFuture<ProcessCameraProvider> listenableFuture = ProcessCameraProvider.getInstance(this);
@@ -169,6 +195,7 @@ public class TakePhotoActivity extends AppCompatActivity {
                 cameraProvider.unbindAll();
 
                 androidx.camera.core.Camera camera1 = cameraProvider.bindToLifecycle(this, cameraSelector, preview, imageCapture);
+                preview.setSurfaceProvider(pvCamera.getSurfaceProvider());
 
                 ibTakePhoto.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -182,7 +209,7 @@ public class TakePhotoActivity extends AppCompatActivity {
 
                     }
                 });
-                preview.setSurfaceProvider(pvCamera.getSurfaceProvider());
+
             }catch (ExecutionException | InterruptedException e){
                 e.printStackTrace();
             }

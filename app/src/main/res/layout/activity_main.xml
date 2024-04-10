@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#FFE6E6"
 
-    tools:context=".MainActivity">
+    tools:context=".View.MainActivity">
 
     <TextView
         android:layout_width="wrap_content"

@@ -1,31 +1,24 @@
-package com.example.lym;
+package com.example.lym.View;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.*;
 
 import com.example.lym.Model.User;
+import com.example.lym.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.text.BreakIterator;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class SignupActivity extends AppCompatActivity {
 
@@ -61,8 +54,6 @@ public class SignupActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()){
-                                        //send verification email
-                                        firebaseUser.sendEmailVerification();
                                         Toast.makeText(SignupActivity.this, "User registered successfully", Toast.LENGTH_LONG).show();
                                         Intent intent = new Intent(SignupActivity.this,LoginActivity.class);
                                         startActivity(intent);

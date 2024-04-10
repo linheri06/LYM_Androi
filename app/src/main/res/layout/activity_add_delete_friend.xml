@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#FFE6E6"
     android:backgroundTint="#FFE6E6"
-    tools:context=".AddDeleteFriend">
+    tools:context=".View.AddDeleteFriend">
 
     <Button
         android:id="@+id/btnComeBack"

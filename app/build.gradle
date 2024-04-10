@@ -56,4 +56,8 @@ dependencies {
     implementation("com.google.firebase:firebase-auth")
     implementation 'com.squareup.picasso:picasso:2.8'
 
+<<<<<<< HEAD
+    implementation("com.google.firebase:firebase-storage")
+=======
+>>>>>>> 5a3023f23fefd13e1b5c17d89a3435f1c92f516e
 }
