@@ -5,38 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFE6E6"
-    tools:context=".TakePhotoActivity">
+    tools:context=".View.TakePhotoActivity">
 
     <androidx.camera.view.PreviewView
         android:id="@+id/pvCamera"
-        android:layout_width="353dp"
-        android:layout_height="426dp"
+        android:layout_width="350dp"
+        android:layout_height="489dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.37" />
+        app:layout_constraintVertical_bias="0.446" />
 
     <ImageButton
         android:id="@+id/ibTakePhoto"
         android:layout_width="122dp"
         android:layout_height="118dp"
-        android:contentDescription="Delete"
         android:background="@drawable/round_white"
+        android:contentDescription="Delete"
         android:src="@drawable/baseline_camera_alt_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.897" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/tvListFriendTakePhoto"
         android:layout_width="170dp"
         android:layout_height="37dp"
         android:background="#FFFFFF"
+        android:gravity="center"
         android:text="Bạn bè"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.597"
@@ -48,16 +52,15 @@
         android:id="@+id/ibProfileTakePhoto"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:background="@drawable/round_button"
         android:contentDescription="Delete"
+        android:shape="oval"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.047"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024"
-        android:background="@drawable/round_button"
-        android:shape="oval"
-        />
+        app:layout_constraintVertical_bias="0.024" />
 
     <ImageButton
         android:id="@+id/ibChangeCamera"
@@ -68,12 +71,26 @@
         android:src="@drawable/baseline_360_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.82"
+        app:layout_constraintHorizontal_bias="0.822"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.861" />
+        app:layout_constraintVertical_bias="0.96" />
 
-<!--    <ImageView-->
+    <ImageButton
+        android:id="@+id/ibImageList"
+        android:layout_width="65dp"
+        android:layout_height="67dp"
+        android:background="@drawable/round_white"
+        android:contentDescription="Delete"
+        android:src="@drawable/baseline_apps_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.179"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96" />
+
+    <!--    <ImageView-->
 <!--        android:id="@+id/ivTakePhoto"-->
 <!--        android:layout_width="353dp"-->
 <!--        android:layout_height="426dp"-->

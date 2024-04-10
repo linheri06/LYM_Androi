@@ -1,10 +1,13 @@
-package com.example.lym;
+package com.example.lym.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
 import android.widget.*;
+
+import com.example.lym.R;
+
 public class ItemFriend extends AppCompatActivity {
 
     RelativeLayout rlFriend;

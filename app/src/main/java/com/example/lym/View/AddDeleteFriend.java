@@ -1,4 +1,4 @@
-package com.example.lym;
+package com.example.lym.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.widget.*;
+
+import com.example.lym.R;
 
 public class AddDeleteFriend extends AppCompatActivity {
 
