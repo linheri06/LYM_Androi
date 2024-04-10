@@ -1,4 +1,4 @@
-package com.example.lym;
+package com.example.lym.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
 
+import com.example.lym.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -27,18 +28,20 @@ public class LoginActivity extends AppCompatActivity {
     EditText eTUsername;
 
     EditText eTPW;
+    FirebaseAuth mAuth;
 
 
     private void Login(){
         String Username = eTUsername.getText().toString();
         String PW = eTPW.getText().toString();
-        FirebaseAuth mAuthencation = null;
-        mAuthencation.signInWithEmailAndPassword(Username,PW)
+        mAuth.signInWithEmailAndPassword(Username,PW)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             Toast.makeText(LoginActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
+                            Intent myintent = new Intent(LoginActivity.this, TakePhotoActivity.class);
+                            startActivity(myintent);
                         }else {
                             Toast.makeText(LoginActivity.this, "Lỗi!", Toast.LENGTH_SHORT).show();
                         }
@@ -62,12 +65,12 @@ public class LoginActivity extends AppCompatActivity {
         eTUsername = (EditText) findViewById(R.id.eTUsername);
         eTPW = (EditText) findViewById(R.id.eTPW);
 
+        mAuth = FirebaseAuth.getInstance();
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myintent = new Intent(LoginActivity.this, TakePhotoActivity.class);
-                startActivity(myintent);
-
+                Login();
             }
         });
 
@@ -77,7 +80,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent myintent = new Intent(LoginActivity.this, SignupActivity.class);
                 startActivity(myintent);
-
             }
         });
 

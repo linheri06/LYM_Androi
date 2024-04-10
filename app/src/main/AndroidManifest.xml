@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -20,37 +22,49 @@
         android:theme="@style/Theme.LYM"
         tools:targetApi="31">
         <activity
-            android:name=".TakePhotoActivity"
+            android:name=".View.ChangePass"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".View.ChangeEmail"
             android:exported="false" />
         <activity
-            android:name=".PostImageActivity"
+            android:name=".View.ChangeBir"
             android:exported="false" />
         <activity
-            android:name=".ImageClassification"
+            android:name=".View.ChangeName"
             android:exported="false" />
         <activity
-            android:name=".ItemFriend"
+            android:name=".View.TakePhotoActivity"
             android:exported="false" />
         <activity
-            android:name=".AddDeleteFriend"
+            android:name=".View.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".WatchPostActivity"
+            android:name=".View.PostImageActivity"
             android:exported="false" />
         <activity
-            android:name=".ChangePasswordActivity"
+            android:name=".View.ImageClassification"
             android:exported="false" />
         <activity
-            android:name=".SignupActivity"
+            android:name=".View.ItemFriend"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".View.AddDeleteFriend"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".View.WatchPostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".View.ChangePasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".View.SignupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".View.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".View.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
