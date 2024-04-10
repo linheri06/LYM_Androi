@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFE6E6"
-    tools:context=".ProfileActivity">
+    tools:context=".View.ProfileActivity">
 
     <ImageView
         android:id="@+id/ivAvata_profile"
@@ -62,11 +62,11 @@
             android:text="Thay đổi sinh nhật" />
 
         <Button
-            android:id="@+id/btnChangeEmail"
+            android:id="@+id/btnChangePass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#FFCAD4"
-            android:text="Thay đổi email" />
+            android:text="Thay đổi mật khẩu" />
     </LinearLayout>
 
     <LinearLayout
