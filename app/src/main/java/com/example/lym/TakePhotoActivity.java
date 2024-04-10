@@ -87,7 +87,6 @@ public class TakePhotoActivity extends AppCompatActivity {
 
         Log.d("UserCount", firebaseUser.getUid());
 
-        // Initialize view references (as before)
         ibProfileTakePhoto = (ImageButton) findViewById(R.id.ibProfileTakePhoto);
         DatabaseReference avatarUrlRef = usersRef.child("avatar");
         Log.d("UserCount","aaaa1");
@@ -96,7 +95,6 @@ public class TakePhotoActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Log.d("UserCount","aaaa2");
                 String avatarUrl = snapshot.getValue(String.class);
-
                 Log.d("UserCount", avatarUrl);
                 Log.d("UserCount","aaaa3");
                 Picasso.get().load(avatarUrl).into(ibProfileTakePhoto);
@@ -146,9 +144,6 @@ public class TakePhotoActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
     }
 
     public void startCamera(int cameraFacing){
