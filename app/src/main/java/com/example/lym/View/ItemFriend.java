@@ -21,11 +21,11 @@ public class ItemFriend extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_friend);
 
-        rlFriend = findViewById(R.id.rlFriend);
-        ivImage = (android.widget.ImageView) findViewById(R.id.ivImage);
-        tvName = (TextView) findViewById(R.id.tvName);
-        btnChat = (Button) findViewById(R.id.btnChat);
-        btnDelete = (Button) findViewById(R.id.btnDelete);
+//        rlFriend = findViewById(R.id.rlFriend);
+//        ivImage = (android.widget.ImageView) findViewById(R.id.ivImage);
+//        tvName = (TextView) findViewById(R.id.tvName);
+//        btnChat = (Button) findViewById(R.id.btnChat);
+//        btnDelete = (Button) findViewById(R.id.btnDelete);
 
     }
 }

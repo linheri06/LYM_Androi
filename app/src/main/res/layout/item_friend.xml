@@ -1,82 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+<<<<<<< HEAD
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+=======
     android:layout_height="match_parent"
     android:background="#FFE6E6"
     android:backgroundTint="#FFE6E6"
     tools:context=".View.ItemFriend">
+>>>>>>> 6fcbbec8085e7079dfc1ba6314e7f7a8dbb3ab54
 
-    <RelativeLayout
-        android:id="@+id/rlFriend"
-        android:layout_width="393dp"
-        android:layout_height="93dp"
-        android:background="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.142">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/ivImage"
             android:layout_width="64dp"
             android:layout_height="66dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="19dp"
-            android:layout_marginEnd="324dp"
-            android:layout_marginBottom="8dp"
             android:scaleType="fitCenter"
             android:src="@drawable/circle" />
 
         <TextView
             android:id="@+id/tvName"
-            android:layout_width="161dp"
-            android:layout_height="34dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="95dp"
-            android:layout_marginTop="35dp"
-            android:layout_marginEnd="137dp"
-            android:layout_marginBottom="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
             android:text="Tên bạn bè"
-            android:textSize="20sp" />
+            android:textSize="20sp"></TextView>
+    </LinearLayout>
 
-        <Button
-            android:id="@+id/btnChat"
-            android:layout_width="56dp"
-            android:layout_height="52dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="259dp"
-            android:layout_marginTop="26dp"
-            android:layout_marginEnd="78dp"
-            android:layout_marginBottom="15dp"
-            android:text="Chat" />
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:gravity="center"-->
+    <!--        >-->
 
-        <Button
-            android:id="@+id/btnDelete"
-            android:layout_width="54dp"
-            android:layout_height="53dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="327dp"
-            android:layout_marginTop="26dp"
-            android:layout_marginEnd="12dp"
-            android:layout_marginBottom="14dp"
-            android:text="Delete" />
+    <!--        <ImageView-->
+    <!--            android:id="@+id/ivImage"-->
+    <!--            android:layout_width="64dp"-->
+    <!--            android:layout_height="66dp"-->
+    <!--            android:scaleType="fitCenter"-->
+    <!--            android:src="@drawable/circle" />-->
 
-    </RelativeLayout>
+    <!--        <TextView-->
+    <!--                    android:id="@+id/tvName"-->
+    <!--                    android:layout_width="161dp"-->
+    <!--                    android:layout_height="34dp"-->
+    <!--                    android:layout_marginStart="95dp"-->
+    <!--                    android:layout_marginTop="35dp"-->
+    <!--                    android:layout_marginEnd="137dp"-->
+    <!--                    android:layout_marginBottom="24dp"-->
+    <!--                    android:text="Tên bạn bè"-->
+    <!--                    android:textSize="20sp" />-->
+    <!--    </LinearLayout>-->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/rlFriend"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="93dp"-->
+    <!--        android:background="#FFFFFF"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.142"-->
+    <!--        android:orientation="vertical">-->
+
+    <!--       -->
+
+    <!--&lt;!&ndash;        <TextView&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:id="@+id/tvName"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_width="161dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_height="34dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_alignParentStart="true"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_alignParentTop="true"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_alignParentEnd="true"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_alignParentBottom="true"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_marginStart="95dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_marginTop="35dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_marginEnd="137dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_marginBottom="24dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:text="Tên bạn bè"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:textSize="20sp" />&ndash;&gt;-->
+
+    <!--    </LinearLayout>-->
+
+</androidx.cardview.widget.CardView>
