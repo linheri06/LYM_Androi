@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFE6E6"
+    tools:context=".View.ProfileActivity">
+
+    <ImageView
+        android:id="@+id/ivAvata_profile"
+        android:layout_width="117dp"
+        android:layout_height="117dp"
+        android:background="@drawable/round_white"
+        android:padding="10dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.068" />
+
+    <Button
+        android:id="@+id/btnListFriend"
+        android:layout_width="283dp"
+        android:layout_height="76dp"
+        android:background="@color/white"
+        android:backgroundTint="#FFFFFF"
+        android:text="Danh sách bạn bè"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.266" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="290dp"
+        android:layout_height="168dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.621">
+
+        <Button
+            android:id="@+id/btnChangeName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFCAD4"
+            android:text="Thay đổi tên" />
+
+        <Button
+            android:id="@+id/btnChangeBir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFCAD4"
+            android:text="Thay đổi sinh nhật" />
+
+        <Button
+            android:id="@+id/btnChangePass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFCAD4"
+            android:text="Thay đổi mật khẩu" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="285dp"
+        android:layout_height="121dp"
+        android:background="#FBFBFB"
+        android:backgroundTint="#FFFFFF"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.969">
+
+        <Button
+            android:id="@+id/btnDeleteUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFCAD4"
+            android:text="Xóa tài khoản" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFCAD4"
+            android:text="Đăng xuất" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvOverview"
+        android:layout_width="164dp"
+        android:layout_height="42dp"
+        android:background="#85FFFFFF"
+        android:drawableLeft="@drawable/baseline_mode_edit_outline_24"
+        android:text=" Tổng quan"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:emojiCompatEnabled="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.246"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.419" />
+
+    <TextView
+        android:id="@+id/tvDangerous"
+        android:layout_width="222dp"
+        android:layout_height="42dp"
+        android:background="#85FFFFFF"
+        android:drawableLeft="@drawable/baseline_dangerous_24"
+        android:text=" Vùng nguy hiểm"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:emojiCompatEnabled="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.322"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.775" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

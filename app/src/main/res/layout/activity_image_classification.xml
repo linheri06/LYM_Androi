@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/btnChat"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFE6E6"
+    tools:context=".View.ImageClassification">
+
+    <Spinner
+        android:id="@+id/spinnerClassify"
+        android:layout_width="180dp"
+        android:layout_height="73dp"
+        android:background="#F4538A"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03" />
+
+    <ImageButton
+        android:id="@+id/ibtnImage_classify"
+        android:layout_width="69dp"
+        android:layout_height="69dp"
+        android:background="@drawable/circle"
+        android:contentDescription="Delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageButton
+        android:id="@+id/btnTakePhoto_classify"
+        android:layout_width="82dp"
+        android:layout_height="82dp"
+        android:background="@drawable/round_white"
+        android:contentDescription="Delete"
+        android:src="@drawable/baseline_camera_alt_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.989" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/revImage_classify"
+        android:layout_width="339dp"
+        android:layout_height="410dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerClassify"
+        app:layout_constraintVertical_bias="0.287" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
