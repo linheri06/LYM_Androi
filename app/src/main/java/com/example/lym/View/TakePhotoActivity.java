@@ -82,12 +82,12 @@ public class TakePhotoActivity extends AppCompatActivity {
         FirebaseUser firebaseUser = mAuthencation.getCurrentUser();
         DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference().child("users").child(firebaseUser.getUid());
 
-        Log.d("UserCount", firebaseUser.getUid());
+        //Log.d("UserCount", firebaseUser.getUid());
 
         ibProfileTakePhoto = (ImageButton) findViewById(R.id.ibProfileTakePhoto);
         DatabaseReference avatarUrlRef = usersRef.child("avatar");
-        Log.d("UserCount","aaaa1");
-        avatarUrlRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        //Log.d("UserCount","aaaa1");
+        avatarUrlRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String avatarUrl = snapshot.getValue(String.class);
@@ -153,7 +153,7 @@ public class TakePhotoActivity extends AppCompatActivity {
 
     private void setTvListFriendTakePhoto( FirebaseUser firebaseUser) {
         DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference().child("friends").child(firebaseUser.getUid());
-        Log.d("UserCount","aaaa12");
+        //Log.d("UserCount","aaaa12");
         usersRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

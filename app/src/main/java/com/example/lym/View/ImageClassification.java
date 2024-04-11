@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
 
+import com.example.lym.ImageClassificationAdapter;
 import com.example.lym.R;
 
 public class ImageClassification extends AppCompatActivity {
@@ -27,7 +28,6 @@ public class ImageClassification extends AppCompatActivity {
         setContentView(R.layout.activity_image_classification);
 
         ibtnImage_classify = (ImageButton) findViewById(R.id.ibtnImage_classify);
-        btnChat_classify = (Button) findViewById(R.id.btnChat_classify);
         btnTakePhoto_classify = (ImageButton) findViewById(R.id.btnTakePhoto_classify);
         spinnerClassify = (Spinner) findViewById(R.id.spinnerClassify);
         revImage_classify = (RecyclerView) findViewById(R.id.revImage_classify);
