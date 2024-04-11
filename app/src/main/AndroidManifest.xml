@@ -25,9 +25,6 @@
             android:name=".View.ChangePass"
             android:exported="false" />
         <activity
-            android:name=".View.ChangeEmail"
-            android:exported="false" />
-        <activity
             android:name=".View.ChangeBir"
             android:exported="false" />
         <activity
@@ -50,7 +47,8 @@
             android:exported="false" />
         <activity
             android:name=".View.AddDeleteFriend"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".View.WatchPostActivity"
             android:exported="false" />
