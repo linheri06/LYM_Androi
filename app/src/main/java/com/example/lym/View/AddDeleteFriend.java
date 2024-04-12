@@ -23,13 +23,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 public class AddDeleteFriend extends AppCompatActivity {
 
-    Button btnComeBack;
-    Button btnSearch;
+    ImageButton btnComeBack;
+    ImageButton btnSearch;
+    ImageButton ibBackTakePhoto;
     TextView tvNumberFried;
     EditText edtSearch;
     TextView tvFriedList;
@@ -42,13 +44,18 @@ public class AddDeleteFriend extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_delete_friend);
+        mAuthencation = FirebaseAuth.getInstance();
+        FirebaseUser firebaseUser = mAuthencation.getCurrentUser();
 
-        btnComeBack = (Button) findViewById(R.id.btnComeBack);
-        btnSearch = (Button) findViewById(R.id.btnSearch);
+        btnComeBack = (ImageButton) findViewById(R.id.btnComeBack);
+            setAvataCurrent(firebaseUser);
+        btnSearch = (ImageButton) findViewById(R.id.btnSearch);
         tvNumberFried = (TextView) findViewById(R.id.tvNumberFried);
+            setTvListFriendTakePhoto(firebaseUser);
         edtSearch = (EditText) findViewById(R.id.edtSearch);
         tvFriedList = (TextView) findViewById(R.id.tvFriedList);
         revFriendList = findViewById(R.id.revFriendList);
+        ibBackTakePhoto = (ImageButton) findViewById(R.id.ibBackTakePhoto);
 
         LoadData();
         btnComeBack.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +64,14 @@ public class AddDeleteFriend extends AppCompatActivity {
                 Intent myintent = new Intent(AddDeleteFriend.this, ProfileActivity.class);
                 startActivity(myintent);
 
+            }
+        });
+
+        ibBackTakePhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myintent = new Intent(AddDeleteFriend.this, TakePhotoActivity.class);
+                startActivity(myintent);
             }
         });
 
@@ -208,5 +223,41 @@ public class AddDeleteFriend extends AppCompatActivity {
             }
         });
 
+    }
+    private void setTvListFriendTakePhoto( FirebaseUser firebaseUser) {
+        DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference().child("friends").child(firebaseUser.getUid());
+        //Log.d("UserCount","aaaa12");
+        usersRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int nodeCount = (int) snapshot.getChildrenCount();
+                tvNumberFried.setText(String.valueOf(nodeCount)+ " người bạn");
+                // Do something with nodeCount (e.g., update UI)
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e("NodeCount", "Lỗi khi lấy số lượng node: " + error.getMessage());
+            }
+        });
+    }
+
+    private void setAvataCurrent(FirebaseUser firebaseUser) {
+        DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference().child("users").child(firebaseUser.getUid());
+        DatabaseReference avatarUrlRef = usersRef.child("avatar");
+        //Log.d("UserCount","aaaa1");
+        avatarUrlRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String avatarUrl = snapshot.getValue(String.class);
+                Log.d("UserCount", avatarUrl);
+                Picasso.get().load(avatarUrl).into(btnComeBack);
+                btnSearch.setClipToOutline(true);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Xử lý khi có lỗi xảy ra
+            }
+        });
     }
 }
